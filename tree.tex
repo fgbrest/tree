@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\begin{document}
+\begin{tikzpicture}[
+roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
+squarednode/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=5mm},
+]
+%Nodes
+\node[roundnode]        (daath)                              {Daath};
+\node[roundnode]        (kether)        [above=of daath] {Kether};
+\node[roundnode]        (chokmah)       [right=of daath] {Chokmah};
+\node[roundnode]        (binah)         [left=of daath]  {Binah};
+\node[roundnode]        (chesed)        [below=of chokmah] {Chesed};
+\node[roundnode]        (gevurah)       [below=of binah] {Gevurah};
+\node[roundnode]        (tiphareth)     [below=of daath] {Tiphareth};
+\node[roundnode]        (netzach)       [below=of chesed] {Netzach};
+\node[roundnode]        (hod)           [below=of gevurah] {Hod};
+\node[roundnode]        (yesod)       [below=of tiphareth] {Yesod};
+\node[roundnode]        (malkuth)       [below=of yesod] {Malkuth};
+
+%Lines
+\draw[-] (uppercircle.south) -- (maintopic.north);
+\draw[->] (maintopic.east) -- (rightsquare.west);
+\draw[->] (rightsquare.south) .. controls +(down:7mm) and +(right:7mm) .. (lowercircle.east);
+\end{tikzpicture}
+\end{document}
